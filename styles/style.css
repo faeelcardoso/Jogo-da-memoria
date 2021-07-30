@@ -72,7 +72,20 @@ body {
 }
 #gameBoard {
   max-width: 700px;
+  max-height: 850px;
   display: grid;
-  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr; /*serão 20 cartas, arrumar depois*/
+  grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
   gap: 20px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1280px){
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+  img {
+    height: 50px;
+    width: 50px;
+  }
 }
