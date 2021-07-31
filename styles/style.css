@@ -23,6 +23,9 @@ body {
   /*para rodar bonitinho, tenho que usar o transform-style sempre com transform*/
   transition: transform .5s;
 }
+.card:hover {
+  cursor: pointer;
+}
 .cardFront, .cardBack {
   width: 100%;
   height: 100%;
