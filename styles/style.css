@@ -65,10 +65,20 @@ body {
 #restart {
   padding: 20px;
   font-size: 20px;
+  font-weight: bold;
   background-color: yellow;
   border: none;
   border-radius: 10px;
   margin-top: 15px;
+}
+#restart:hover {
+  background-color: #05C3FF;
+  color: white;
+  cursor: pointer;
+}
+#restart:active {
+  transition-duration: .4s;
+  transform: translateY(+10%);
 }
 #gameBoard {
   max-width: 700px;
@@ -79,13 +89,26 @@ body {
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1360px) {
   .card {
-    width: 80px;
-    height: 80px;
+    width: 105px;
+    height: 105px;
   }
   img {
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .card {
+    width: 70px;
+    height: 70px;
+  }
+  img {
+    height: 35px;
+    width: 35px;
+  }
+  #gameOver div {
+    text-align: center;
   }
 }
