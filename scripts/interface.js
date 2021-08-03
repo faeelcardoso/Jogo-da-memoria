@@ -53,6 +53,7 @@ function createCardFace(face, card, element) {
   element.appendChild(cardElementFace);
 
   startMoves();
+  getLocalStorage();
 }
 
 function startMoves() {
@@ -71,13 +72,24 @@ function updateMoves() {
 
 function updateScore() {
   if(game.firstScore === true) {
-    game.score = game.moves;
+    game.score.lsScore = game.moves;
     game.firstScore = false;
-  } else if(game.moves < game.score) {
-    game.score = game.moves;
+  } else if(game.moves < game.score.lsScore) {
+    game.score.lsScore = game.moves;
   }
   let score = document.getElementById("score");
-  score.textContent = `Score: ${game.score}`;
+  score.textContent = `Score: ${game.score.lsScore}`;
+
+  game.localStorageUpdate(); // armazenando para trabalhar o localStorage
+}
+
+function getLocalStorage() {
+  let data = JSON.parse(localStorage.getItem("score"));
+  if(data !== 0) {
+    game.score = data;
+    let score = document.getElementById("score");
+    score.textContent = `Score: ${game.score.lsScore}`;
+  }
 }
 
 function flipCard() {

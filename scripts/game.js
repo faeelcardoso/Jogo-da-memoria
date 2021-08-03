@@ -1,11 +1,14 @@
 let game = {
   cards: null,
   moves: null,
-  score: null,
   firstScore: true,
   lockMode: false,
   firstCard: null,
   secondCard: null,
+
+  score: {
+    "lsScore": 0
+  },
 
   techs: [
     "bootstrap",
@@ -114,4 +117,8 @@ let game = {
       // let a = 50 - let b = 30 -> [a, b] = [b, a] -> a = 30 - b = 50
     }
   },
+
+  localStorageUpdate() {
+    localStorage.setItem("score", JSON.stringify(game.score));
+  }
 }
