@@ -85,7 +85,7 @@ function updateScore() {
 
 function getLocalStorage() {
   let data = JSON.parse(localStorage.getItem("score"));
-  if(data !== 0) {
+  if(data !== null) {
     game.score = data;
     let score = document.getElementById("score");
     score.textContent = `Score: ${game.score.lsScore}`;
