@@ -51,6 +51,33 @@ function createCardFace(face, card, element) {
   }
 
   element.appendChild(cardElementFace);
+
+  startMoves();
+}
+
+function startMoves() {
+  game.moves = 0;
+
+  let moves = document.getElementById("moves");
+  moves.textContent = `Moves: ${game.moves}`;
+}
+
+function updateMoves() {
+  game.moves++;
+
+  let moves = document.getElementById("moves");
+  moves.textContent = `Moves: ${game.moves}`;
+}
+
+function updateScore() {
+  if(game.firstScore === true) {
+    game.score = game.moves;
+    game.firstScore = false;
+  } else if(game.moves < game.score) {
+    game.score = game.moves;
+  }
+  let score = document.getElementById("score");
+  score.textContent = `Score: ${game.score}`;
 }
 
 function flipCard() {
@@ -58,6 +85,7 @@ function flipCard() {
     this.classList.add(FLIP);
     
     if(game.secondCard) { // Já tem a segunda carta selecionada?
+      updateMoves();
       if(game.checkMatch()) { // deu match?
         game.clearCards(); // limpa
 
@@ -81,6 +109,7 @@ function flipCard() {
 }
 
 function restart() {
+  updateScore();
   game.clearCards();
   initializeCards(game.createCardsFromTechs());
   let gameOverLayer = document.querySelector("#gameOver");

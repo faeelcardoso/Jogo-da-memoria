@@ -1,6 +1,8 @@
 let game = {
   cards: null,
-
+  moves: null,
+  score: null,
+  firstScore: true,
   lockMode: false,
   firstCard: null,
   secondCard: null,
