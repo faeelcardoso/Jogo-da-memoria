@@ -1,13 +1,13 @@
 let game = {
   cards: null,
   moves: null,
-  firstScore: true,
   lockMode: false,
   firstCard: null,
   secondCard: null,
 
   score: {
-    "lsScore": 0
+    "lsScore": 0,
+    "firstScore": true,
   },
 
   techs: [

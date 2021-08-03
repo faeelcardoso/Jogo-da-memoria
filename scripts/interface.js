@@ -71,16 +71,17 @@ function updateMoves() {
 }
 
 function updateScore() {
-  if(game.firstScore === true) {
+  if(game.score.firstScore === true) {
     game.score.lsScore = game.moves;
-    game.firstScore = false;
+    game.score.firstScore = false;
+    game.localStorageUpdate(); // armazenando para trabalhar o localStorage
   } else if(game.moves < game.score.lsScore) {
     game.score.lsScore = game.moves;
+    game.localStorageUpdate(); // armazenando para trabalhar o localStorage
   }
   let score = document.getElementById("score");
   score.textContent = `Score: ${game.score.lsScore}`;
 
-  game.localStorageUpdate(); // armazenando para trabalhar o localStorage
 }
 
 function getLocalStorage() {
