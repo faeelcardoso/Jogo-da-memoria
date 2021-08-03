@@ -130,4 +130,15 @@ body {
   #gameOver div {
     text-align: center;
   }
+  .aside {
+    margin-right: 0;
+    position: absolute;
+    top: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  #score {
+    margin-left: 5px;
+    margin-top: 0;
+  }
 }
